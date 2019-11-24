@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import javax.persistence.*;
 
 import org.dragonli.jpatools.store.AbstractEntity;
+import org.dragonli.service.modules.accountservice.entity.enums.BusinessFlowType;
 import org.dragonli.service.modules.accountservice.entity.enums.BusinessStatus;
 import org.hibernate.annotations.Proxy;
 
@@ -12,9 +13,7 @@ import org.hibernate.annotations.Proxy;
 @Table(name="business")
 @Proxy(lazy = false)
 public class BusinessEntity extends AbstractEntity {
-	
-	@Column(nullable = false)
-    private String type;
+
 	
 	@Column(name="enterprise_id",nullable = false)
     private Long enterpriseId;
@@ -61,6 +60,9 @@ public class BusinessEntity extends AbstractEntity {
 		return status;
 	}
 
+	@Enumerated(EnumType.STRING)
+	@Column(name="type",nullable = false)
+	private BusinessFlowType type;
 
 	public void setStatus(BusinessStatus status) {
 		this.status = status;
@@ -151,12 +153,12 @@ public class BusinessEntity extends AbstractEntity {
 	}
 
 
-	public String getType() {
+	public BusinessFlowType getType() {
 		return type;
 	}
 
 
-	public void setType(String type) {
+	public void setType(BusinessFlowType type) {
 		this.type = type;
 	}
 
