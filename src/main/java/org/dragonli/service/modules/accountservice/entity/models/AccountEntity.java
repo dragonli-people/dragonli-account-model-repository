@@ -46,12 +46,6 @@ public class AccountEntity extends AbstractEntity {
     /**
      *
      */
-    @Column(name="application_id",nullable = false)
-    private Long applicationId;
-
-    /**
-     *
-     */
     @Column(name="account_version",nullable = false)
     private Integer accountVersion;
     
@@ -141,13 +135,5 @@ public class AccountEntity extends AbstractEntity {
 
     public void setStatus(AccountsStatus status) {
         this.status = status;
-    }
-
-    public Long getApplicationId() {
-        return applicationId;
-    }
-
-    public void setApplicationId(Long applicationId) {
-        this.applicationId = applicationId;
     }
 }

@@ -7,7 +7,7 @@ import org.dragonli.service.modules.accountservice.repository.expand.IAccountRep
 import java.util.List;
 
 public interface BusinessRepository extends IAccountRepositoryExpand<BusinessEntity,Long> {
-	BusinessEntity findFirstByEnterpriseIdOrderByAccountVersionDesc(long enterpriseId);
+//	BusinessEntity findFirstByUserIdOrderByAccountVersionDesc(long enterpriseId);
 	BusinessEntity findByOrderId(String orderId);
 	List<BusinessEntity> findAllByStatus(BusinessStatus status);
 }

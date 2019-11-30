@@ -26,15 +26,10 @@ public class FundFlowEvidenceEntity extends AbstractEntity {
 	private static final long serialVersionUID = 1L;
 
 
-	@Column(name="accountId",nullable = false)
+	@Column(name="account_id",nullable = false)
     private Long accountId;
 	
-	
-	@Column(name="balance",nullable = false)
-    private BigDecimal balance;
-	
-	
-	@Column(name="flowAmount",nullable = false)
+	@Column(name="flow_amount",nullable = false)
     private BigDecimal flowAmount;
 	
 	
@@ -42,12 +37,8 @@ public class FundFlowEvidenceEntity extends AbstractEntity {
     private Long timeout;
 	
 	
-	@Column(name="userId",nullable = false)
-    private String userId;
-	
-	
-	@Column(name="account_type",nullable = false)
-    private AccountType accountType;
+	@Column(name="user_id",nullable = false)
+    private Long userId;
 	
 	@Column(name="currency",nullable = false)
     private String currency;
@@ -55,10 +46,6 @@ public class FundFlowEvidenceEntity extends AbstractEntity {
 	@Column(name="flow_status",nullable = false)
 	@Enumerated(EnumType.STRING)
     private EvidenceStatus flowStatus;
-
-	@Enumerated(EnumType.STRING)
-	@Column(name="flow_type",nullable = false)
-    private BusinessFlowType flowType;
 	
 	@Column(name="order_id",nullable = false)
     private String orderId;
@@ -78,14 +65,6 @@ public class FundFlowEvidenceEntity extends AbstractEntity {
 		this.accountId = accountId;
 	}
 
-	public BigDecimal getBalance() {
-		return balance;
-	}
-
-	public void setBalance(BigDecimal balance) {
-		this.balance = balance;
-	}
-
 	public BigDecimal getFlowAmount() {
 		return flowAmount;
 	}
@@ -102,22 +81,6 @@ public class FundFlowEvidenceEntity extends AbstractEntity {
 		this.timeout = timeout;
 	}
 
-	public String getUserId() {
-		return userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
-	public AccountType getAccountType() {
-		return accountType;
-	}
-
-	public void setAccountType(AccountType accountType) {
-		this.accountType = accountType;
-	}
-
 	public String getCurrency() {
 		return currency;
 	}
@@ -132,14 +95,6 @@ public class FundFlowEvidenceEntity extends AbstractEntity {
 
 	public void setFlowStatus(EvidenceStatus flowStatus) {
 		this.flowStatus = flowStatus;
-	}
-
-	public BusinessFlowType getFlowType() {
-		return flowType;
-	}
-
-	public void setFlowType(BusinessFlowType flowType) {
-		this.flowType = flowType;
 	}
 
 	public String getOrderId() {
@@ -164,5 +119,13 @@ public class FundFlowEvidenceEntity extends AbstractEntity {
 
 	public void setStep(int step) {
 		this.step = step;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 }

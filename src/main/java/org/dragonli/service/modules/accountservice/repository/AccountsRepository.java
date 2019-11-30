@@ -7,12 +7,12 @@ import java.util.List;
 
 public interface AccountsRepository extends IAccountRepositoryExpand<AccountEntity,Long>
 {
-	AccountEntity findByUserIdAndReflexIdAndAssetName(long userId, String reflexId, String currency);
+	AccountEntity findByUserIdAndReflexIdAndCurrency(long userId, String reflexId, String currency);
 
-	AccountEntity findByApplicationIdAndReflexIdAndAssetName(long applicationId, String reflexId, String currency);
+//	AccountEntity findByApplicationIdAndReflexIdAndCurrency(long applicationId, String reflexId, String currency);
 
 	List<AccountEntity> findByUserIdAndReflexId(long userId, String reflexId);
-	List<AccountEntity> findAllByApplicationIdAndReflexId(long applicationId, String reflexId);
+//	List<AccountEntity> findAllByApplicationIdAndReflexId(long applicationId, String reflexId);
 	
 	List<AccountEntity> findByUserId(long userId);
 }

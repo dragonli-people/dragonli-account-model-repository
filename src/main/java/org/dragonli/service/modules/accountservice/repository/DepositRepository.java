@@ -10,13 +10,13 @@ import java.util.List;
 
 public interface DepositRepository extends IAccountRepositoryExpand<DepositEntity, Long> {
 
-    Page<DepositEntity> findAllByEnterpriseIdAndEnuserIdAndCurrencyOrderByIdDesc(Long enterpriseId, String userId,
+    Page<DepositEntity> findAllByUserIdAndReflexIdAndCurrencyOrderByIdDesc(Long userId,String reflexId,
             String currency, Pageable page);
 
     List<DepositEntity> findAllByDepositStatusOrderById(DepositStatus status);
 
-    Page<DepositEntity> findAllByApplicationIdAndEnuserIdAndCurrencyOrderByIdDesc(Long applicationId, String userId,
-            String currency, Pageable page);
+//    Page<DepositEntity> findAllByUserIdAndReflexIdAndCurrencyOrderByIdDesc(Long userId, String reflexId,
+//            String currency, Pageable page);
 
     DepositEntity findFirstByOrderByIdDesc();
     DepositEntity findFirstByIdGreaterThanOrderById(Long id);
