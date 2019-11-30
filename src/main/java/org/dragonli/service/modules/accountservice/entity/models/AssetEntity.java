@@ -19,13 +19,7 @@ public class AssetEntity extends AbstractEntity {
      *
      */
     @Column(nullable = false)
-    private String code;
-
-    /**
-     *
-     */
-    @Column(nullable = false,name = "public_chain")
-    private String publicChain;
+    private String currency;
 
     /**
      *
@@ -39,11 +33,6 @@ public class AssetEntity extends AbstractEntity {
     @Column(name="disable_status",nullable = false)
     private Boolean disableStatus;
 
-    /**
-     *
-     */
-    @Column(name="publish_enterprise_id",nullable = false)
-    private Long publishEnterpriseId;
 
     /**
      *
@@ -92,12 +81,12 @@ public class AssetEntity extends AbstractEntity {
 		this.keepDecimal = keepDecimal;
 	}
 
-	public String getCode() {
-        return code;
+	public String getCurrency() {
+        return currency;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     public Boolean getStatus() {
@@ -114,14 +103,6 @@ public class AssetEntity extends AbstractEntity {
 
     public void setDisableStatus(Boolean disableStatus) {
         this.disableStatus = disableStatus;
-    }
-
-    public Long getPublishEnterpriseId() {
-        return publishEnterpriseId;
-    }
-
-    public void setPublishEnterpriseId(Long publishEnterpriseId) {
-        this.publishEnterpriseId = publishEnterpriseId;
     }
 
     public AssetType getAssetType() {
@@ -178,13 +159,5 @@ public class AssetEntity extends AbstractEntity {
 
     public void setWithdrawalDayLimit(BigDecimal withdrawalDayLimit) {
         this.withdrawalDayLimit = withdrawalDayLimit;
-    }
-
-    public String getPublicChain() {
-        return publicChain;
-    }
-
-    public void setPublicChain(String publicChain) {
-        this.publicChain = publicChain;
     }
 }

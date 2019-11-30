@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name="accounts")
+@Table(name="account")
 @Proxy(lazy = false)
 public class AccountEntity extends AbstractEntity {
     private static final long serialVersionUID = 2345052195929832562L;
@@ -22,8 +22,8 @@ public class AccountEntity extends AbstractEntity {
     /**
      *
      */
-    @Column(name="asset_name",nullable = false)
-    private String assetName;
+    @Column(nullable = false)
+    private String currency;
 
     /**
      *
@@ -56,24 +56,12 @@ public class AccountEntity extends AbstractEntity {
     private Integer accountVersion;
     
     
-    @Column(name="owner_id",nullable = false)
-    private Long ownerId;
-    
-    
     @Column(name="reflex_id",nullable = false)
     private String reflexId;
     
     
     @Column(nullable = false)
     private BigDecimal overdraft;
-
-    public Long getOwnerId() {
-		return ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-	}
 
 	public String getReflexId() {
 		return reflexId;
@@ -107,12 +95,12 @@ public class AccountEntity extends AbstractEntity {
         this.assetId = assetId;
     }
 
-    public String getAssetName() {
-        return assetName;
+    public String getCurrency() {
+        return currency;
     }
 
-    public void setAssetName(String assetName) {
-        this.assetName = assetName;
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     public BigDecimal getBalance() {

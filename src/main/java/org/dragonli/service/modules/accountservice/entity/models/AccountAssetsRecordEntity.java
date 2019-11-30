@@ -41,12 +41,6 @@ public class AccountAssetsRecordEntity extends AbstractEntity {
 	/**
 	 *
 	 */
-	@Column(name="owner_id",nullable = false)
-	private Long ownerId;
-
-	/**
-	 *
-	 */
 	@Column(name="asset_id",nullable = false)
 	private Long assetId;
 
@@ -83,18 +77,6 @@ public class AccountAssetsRecordEntity extends AbstractEntity {
 	/**
 	 *
 	 */
-	@Column(name="flow_type_record",nullable = false)
-	private String flowTypeRecord;
-
-	/**
-	 *
-	 */
-	@Column(name="owner_type_record",nullable = true)
-	private String ownerTypeRecord;
-
-	/**
-	 *
-	 */
 	@Column(name="account_version",nullable = true)
 	private Integer accountVersion;
 
@@ -112,23 +94,23 @@ public class AccountAssetsRecordEntity extends AbstractEntity {
 	private AccountAssetsRecordStatus recordStatus;
 
 	
-	@Column(name = "userId",nullable = false)
+	@Column(name = "user_id",nullable = false)
 	private String userId;
 	
-	@Column(name = "evidenceId",nullable = false)
+	@Column(name = "evidence_id",nullable = false)
 	private Long evidenceId;
 	
 	@Column(nullable = false)
 	private String currency;
 	
-	@Column(name = "status",nullable = false)
-	private boolean status;
+	@Column(nullable = false)
+	private Boolean status;
 
-	public boolean isStatus() {
+	public Boolean getStatus() {
 		return status;
 	}
 
-	public void setStatus(boolean status) {
+	public void setStatus(Boolean status) {
 		this.status = status;
 	}
 
@@ -180,14 +162,6 @@ public class AccountAssetsRecordEntity extends AbstractEntity {
 		this.accountId = accountId;
 	}
 
-	public Long getOwnerId() {
-		return ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-	}
-
 	public Long getAssetId() {
 		return assetId;
 	}
@@ -234,22 +208,6 @@ public class AccountAssetsRecordEntity extends AbstractEntity {
 
 	public void setAfterFrozen(BigDecimal afterFrozen) {
 		this.afterFrozen = afterFrozen;
-	}
-
-	public String getFlowTypeRecord() {
-		return flowTypeRecord;
-	}
-
-	public void setFlowTypeRecord(String flowTypeRecord) {
-		this.flowTypeRecord = flowTypeRecord;
-	}
-
-	public String getOwnerTypeRecord() {
-		return ownerTypeRecord;
-	}
-
-	public void setOwnerTypeRecord(String ownerTypeRecord) {
-		this.ownerTypeRecord = ownerTypeRecord;
 	}
 
 	public Integer getAccountVersion() {

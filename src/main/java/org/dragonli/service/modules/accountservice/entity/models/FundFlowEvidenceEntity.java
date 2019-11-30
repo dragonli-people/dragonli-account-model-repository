@@ -10,6 +10,7 @@ import javax.persistence.Table;
 
 import org.dragonli.jpatools.store.AbstractEntity;
 import org.dragonli.service.modules.accountservice.entity.enums.AccountType;
+import org.dragonli.service.modules.accountservice.entity.enums.BusinessFlowType;
 import org.dragonli.service.modules.accountservice.entity.enums.EvidenceStatus;
 import org.hibernate.annotations.Proxy;
 
@@ -54,9 +55,10 @@ public class FundFlowEvidenceEntity extends AbstractEntity {
 	@Column(name="flow_status",nullable = false)
 	@Enumerated(EnumType.STRING)
     private EvidenceStatus flowStatus;
-	
-	@Column(name="flow_type",nullable = true)
-    private String flowType;
+
+	@Enumerated(EnumType.STRING)
+	@Column(name="flow_type",nullable = false)
+    private BusinessFlowType flowType;
 	
 	@Column(name="order_id",nullable = false)
     private String orderId;
@@ -132,11 +134,11 @@ public class FundFlowEvidenceEntity extends AbstractEntity {
 		this.flowStatus = flowStatus;
 	}
 
-	public String getFlowType() {
+	public BusinessFlowType getFlowType() {
 		return flowType;
 	}
 
-	public void setFlowType(String flowType) {
+	public void setFlowType(BusinessFlowType flowType) {
 		this.flowType = flowType;
 	}
 

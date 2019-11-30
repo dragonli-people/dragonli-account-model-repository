@@ -20,11 +20,30 @@ public class AccountAdjustmentEntity extends AbstractEntity {
 	@Column(name="order_id",nullable = false)
     private String orderId;
 
-    /**
-     * 拟弃用
-     */
-    @Column(name="account_version",nullable = false)
-    private Integer accountVersion;
+	@Column(name="flow_amount",nullable = false)
+	private BigDecimal flowAmount;
+
+	@Column(nullable = false)
+	@Enumerated(EnumType.STRING)
+	private AccountAdjustmentStatus status;
+
+	@Column(nullable = false)
+	private String info;
+
+	@Column(nullable = false)
+	private String remark;
+
+	@Column(name="out_time",nullable = false)
+	private Long outTime;
+
+	@Column(nullable = false)
+	private String currency;
+
+	@Column(name="reflex_id",nullable = false)
+	private String reflexId;
+
+	@Column(name="user_id",nullable = false)
+	private String userId;
 
 	public String getOrderId() {
 		return orderId;
@@ -32,14 +51,6 @@ public class AccountAdjustmentEntity extends AbstractEntity {
 
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
-	}
-
-	public Integer getAccountVersion() {
-		return accountVersion;
-	}
-
-	public void setAccountVersion(Integer accountVersion) {
-		this.accountVersion = accountVersion;
 	}
 
 	public BigDecimal getFlowAmount() {
@@ -74,11 +85,11 @@ public class AccountAdjustmentEntity extends AbstractEntity {
 		this.remark = remark;
 	}
 
-	public long getOutTime() {
+	public Long getOutTime() {
 		return outTime;
 	}
 
-	public void setOutTime(long outTime) {
+	public void setOutTime(Long outTime) {
 		this.outTime = outTime;
 	}
 
@@ -90,89 +101,13 @@ public class AccountAdjustmentEntity extends AbstractEntity {
 		this.currency = currency;
 	}
 
-	public String getTokenUrl() {
-		return tokenUrl;
+	public String getReflexId() {
+		return reflexId;
 	}
 
-	public void setTokenUrl(String tokenUrl) {
-		this.tokenUrl = tokenUrl;
+	public void setReflexId(String reflexId) {
+		this.reflexId = reflexId;
 	}
-
-	public String getFlowType() {
-		return flowType;
-	}
-
-	public void setFlowType(String flowType) {
-		this.flowType = flowType;
-	}
-
-	public Long getOwnerId() {
-		return ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-	}
-
-	public Long getEnterpriseId() {
-		return enterpriseId;
-	}
-
-	public void setEnterpriseId(Long enterpriseId) {
-		this.enterpriseId = enterpriseId;
-	}
-
-	public String getEnuserId() {
-		return enuserId;
-	}
-
-	public void setEnuserId(String enuserId) {
-		this.enuserId = enuserId;
-	}
-
-	/**
-	 * 拟弃用
-	 */
-    
-    @Column(nullable = false)
-    private BigDecimal flowAmount;
-
-    @Column(nullable = true)
-    @Enumerated(EnumType.STRING)
-    private AccountAdjustmentStatus status;
-    
-    @Column(nullable = true)
-    private String info;
-    
-    @Column(nullable = true)
-    private String remark;
-    
-    @Column(name="out_time",nullable = true)
-    private long outTime;
-	
-	@Column(nullable = true)
-	private String currency;
-	
-	@Column(name="token_url",nullable = true)
-	private String tokenUrl;
-	
-	@Column(name="flow_type",nullable = true)
-	private String flowType;
-	
-	@Column(name="owner_id",nullable = false)
-	private Long ownerId;
-	
-	@Column(name="enterprise_id",nullable = true)
-	private Long enterpriseId;
-
-	@Column(name="application_id",nullable = true)
-	private Long applicationId;
-	
-	@Column(name="enuser_id",nullable = true)
-	private String enuserId;
-	
-	@Column(name="user_id",nullable = true)
-	private String userId;
 
 	public String getUserId() {
 		return userId;
@@ -180,13 +115,5 @@ public class AccountAdjustmentEntity extends AbstractEntity {
 
 	public void setUserId(String userId) {
 		this.userId = userId;
-	}
-
-	public Long getApplicationId() {
-		return applicationId;
-	}
-
-	public void setApplicationId(Long applicationId) {
-		this.applicationId = applicationId;
 	}
 }

@@ -22,7 +22,7 @@ public class WithdrawalEntity extends AbstractEntity {
     /**
      *
      */
-    @Column(name="back_order_id",nullable = false)
+    @Column(name="back_order_id")
     private String backOrderId;
 
 
@@ -43,7 +43,7 @@ public class WithdrawalEntity extends AbstractEntity {
     /**
      *
      */
-    @Column(name="withdrawal_back_business_id",nullable = false)
+    @Column(name="withdrawal_back_business_id")
     private Long withdrawalBackBusinessId;
 
     /**
@@ -57,12 +57,6 @@ public class WithdrawalEntity extends AbstractEntity {
     @Column(name="reflex_id",nullable = false)
     private String reflexId;
 
-
-    /**
-     *
-     */
-    @Column(name="withdrawal_user_id")
-    private Long withdrawalUserId;
 
     /**
      *
@@ -166,14 +160,6 @@ public class WithdrawalEntity extends AbstractEntity {
 
     public void setReflexId(String reflexId) {
         this.reflexId = reflexId;
-    }
-
-    public Long getWithdrawalUserId() {
-        return withdrawalUserId;
-    }
-
-    public void setWithdrawalUserId(Long withdrawalUserId) {
-        this.withdrawalUserId = withdrawalUserId;
     }
 
     public BigDecimal getAmount() {

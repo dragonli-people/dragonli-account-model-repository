@@ -24,37 +24,31 @@ public class DepositEntity extends AbstractEntity {
     private Long businessId;
 
 
-    @Column(nullable = false)
+    @Column(name="flow_amount",nullable = false)
     private BigDecimal flowAmount;
 
-    @Column(name="deposit_status",nullable = true)
+    @Column(name="deposit_status",nullable = false)
     @Enumerated(EnumType.STRING)
     private DepositStatus depositStatus;
 
 
-    @Column(nullable = true)
+    @Column
     private String info;
 
-    @Column(name="extended_info",nullable = true)
+    @Column(name="extended_info")
     private String extendedInfo;
 
-    @Column(nullable = true)
+    @Column
     private String remark;
 
-    @Column(name="out_time",nullable = true)
+    @Column(name="out_time",nullable = false)
     private long outTime;
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     private String currency;
 
     @Column(name="order_id",nullable = false)
     private Long orderId;
-
-//	@Column(name="steps",nullable = false)
-//	private int steps;
-//
-//	@Column(name="current_step",nullable = false)
-//	private int currentStep;
 
     @Column(name="user_id",nullable = false)
     private Long userId;

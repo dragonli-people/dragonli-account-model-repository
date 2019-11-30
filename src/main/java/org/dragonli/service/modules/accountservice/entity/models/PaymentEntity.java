@@ -5,6 +5,7 @@ import org.dragonli.service.modules.accountservice.entity.enums.PaymentStatus;
 import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name="payment")
@@ -33,13 +34,13 @@ public class PaymentEntity extends AbstractEntity {
     @Column
     private String remark;
 
-	@Column(name="business_paras",nullable = false)
-    private String businessParas;
+//	@Column(name="business_paras",nullable = false)
+//    private String businessParas;
 
-    @Column(name="out_time")
+    @Column(name="out_time",nullable = false)
     private long outTime;
 
-	@Column(nullable = true)
+	@Column(nullable = false)
 	private String currency;
 	
 	@Column(name="extend_info")
@@ -47,6 +48,21 @@ public class PaymentEntity extends AbstractEntity {
 
 	@Column(name="business_id",nullable = false)
 	private Long businessId;
+
+	@Column(name="from_account_id",nullable = false)
+	private Long fromAccountId;
+
+	@Column(name="to_account_id",nullable = false)
+	private Long toAccountId;
+
+	@Column(name="user_id",nullable = false)
+	private Long userId;
+
+	@Column(nullable = false)
+	private String target;
+
+	@Column(nullable = false)
+	private BigDecimal amount;
 
 	public String getOrderId() {
 		return orderId;
@@ -80,13 +96,13 @@ public class PaymentEntity extends AbstractEntity {
 		this.remark = remark;
 	}
 
-	public String getBusinessParas() {
-		return businessParas;
-	}
-
-	public void setBusinessParas(String businessParas) {
-		this.businessParas = businessParas;
-	}
+//	public String getBusinessParas() {
+//		return businessParas;
+//	}
+//
+//	public void setBusinessParas(String businessParas) {
+//		this.businessParas = businessParas;
+//	}
 
 	public long getOutTime() {
 		return outTime;
@@ -118,5 +134,45 @@ public class PaymentEntity extends AbstractEntity {
 
 	public void setBusinessId(Long businessId) {
 		this.businessId = businessId;
+	}
+
+	public Long getFromAccountId() {
+		return fromAccountId;
+	}
+
+	public void setFromAccountId(Long fromAccountId) {
+		this.fromAccountId = fromAccountId;
+	}
+
+	public Long getToAccountId() {
+		return toAccountId;
+	}
+
+	public void setToAccountId(Long toAccountId) {
+		this.toAccountId = toAccountId;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	public String getTarget() {
+		return target;
+	}
+
+	public void setTarget(String target) {
+		this.target = target;
+	}
+
+	public BigDecimal getAmount() {
+		return amount;
+	}
+
+	public void setAmount(BigDecimal amount) {
+		this.amount = amount;
 	}
 }

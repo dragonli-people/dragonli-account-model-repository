@@ -1,7 +1,5 @@
 package org.dragonli.service.modules.accountservice.entity.models;
 
-import java.math.BigDecimal;
-
 import javax.persistence.*;
 
 import org.dragonli.jpatools.store.AbstractEntity;
@@ -13,44 +11,21 @@ import org.hibernate.annotations.Proxy;
 @Table(name="business")
 @Proxy(lazy = false)
 public class BusinessEntity extends AbstractEntity {
-
-	
-	@Column(name="enterprise_id",nullable = false)
-    private Long enterpriseId;
-	
-	@Column(name="user_id",nullable = false)
-    private String userId;
-	
 	
 	@Column(name="steps")
     private int steps;
-	
-	
-	@Column(name="account_version",nullable = false)
-    private int accountVersion;
 	
 	@Column(name="order_id",nullable = false)
     private String orderId;
 	
 	@Column(name="remark",nullable = false)
 	private String remark;
-	
-	@Column(name="currency",nullable = false)
-	private String currency;
-	
-	
-	@Column(name="owner_id",nullable = false)
-	private Long ownerId;
-	
+
 	@Column(name="current_step",nullable = false)
 	private int currentStep;
 
-	//将来应改名为 referenceId
-	@Column(name="tran_id",nullable = false)
-	private Long tranId;
-	
-	@Column(name="token_url",nullable = false)
-	private String tokenUrl;
+	@Column(name="reference_id",nullable = false)
+	private Long referenceId;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name="status",nullable = false)
@@ -64,28 +39,20 @@ public class BusinessEntity extends AbstractEntity {
 	@Column(name="type",nullable = false)
 	private BusinessFlowType type;
 
+	@Column(name="step_parameter",nullable = false)
+	private String stepParameter;
+
 	public void setStatus(BusinessStatus status) {
 		this.status = status;
 	}
 
-
-	public String getTokenUrl() {
-		return tokenUrl;
+	public Long getReferenceId() {
+		return referenceId;
 	}
 
 
-	public void setTokenUrl(String tokenUrl) {
-		this.tokenUrl = tokenUrl;
-	}
-
-
-	public Long getTranId() {
-		return tranId;
-	}
-
-
-	public void setTranId(Long tranId) {
-		this.tranId = tranId;
+	public void setReferenceId(Long referenceId) {
+		this.referenceId = referenceId;
 	}
 
 
@@ -99,16 +66,6 @@ public class BusinessEntity extends AbstractEntity {
 	}
 
 
-	public Long getOwnerId() {
-		return ownerId;
-	}
-
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-	}
-
-
 	public String getRemark() {
 		return remark;
 	}
@@ -117,30 +74,6 @@ public class BusinessEntity extends AbstractEntity {
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
-
-
-	public String getCurrency() {
-		return currency;
-	}
-
-
-	public void setCurrency(String currency) {
-		this.currency = currency;
-	}
-
-
-	public BigDecimal getAmount() {
-		return amount;
-	}
-
-
-	public void setAmount(BigDecimal amount) {
-		this.amount = amount;
-	}
-
-
-	@Column(name="amount",nullable = false)
-	private BigDecimal amount;
 
 
 	public String getOrderId() {
@@ -163,26 +96,6 @@ public class BusinessEntity extends AbstractEntity {
 	}
 
 
-	public Long getEnterpriseId() {
-		return enterpriseId;
-	}
-
-
-	public void setEnterpriseId(Long enterpriseId) {
-		this.enterpriseId = enterpriseId;
-	}
-
-
-	public String getUserId() {
-		return userId;
-	}
-
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
-
 	public int getSteps() {
 		return steps;
 	}
@@ -192,14 +105,11 @@ public class BusinessEntity extends AbstractEntity {
 		this.steps = steps;
 	}
 
-
-	public int getAccountVersion() {
-		return accountVersion;
+	public String getStepParameter() {
+		return stepParameter;
 	}
 
-
-	public void setAccountVersion(int accountVersion) {
-		this.accountVersion = accountVersion;
+	public void setStepParameter(String stepParameter) {
+		this.stepParameter = stepParameter;
 	}
-	
 }
