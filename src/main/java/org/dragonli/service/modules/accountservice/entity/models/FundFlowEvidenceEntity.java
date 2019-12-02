@@ -1,18 +1,11 @@
 package org.dragonli.service.modules.accountservice.entity.models;
 
-import java.math.BigDecimal;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Table;
-
 import org.dragonli.jpatools.store.AbstractEntity;
-import org.dragonli.service.modules.accountservice.entity.enums.AccountType;
-import org.dragonli.service.modules.accountservice.entity.enums.BusinessFlowType;
 import org.dragonli.service.modules.accountservice.entity.enums.EvidenceStatus;
 import org.hibernate.annotations.Proxy;
+
+import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name="fund_flow_evidence")
