@@ -43,7 +43,13 @@ public class AccountAdjustmentEntity extends AbstractEntity {
 	private String reflexId;
 
 	@Column(name="user_id",nullable = false)
-	private String userId;
+	private Long userId;
+
+    @Column(name="account_id",nullable = false)
+	private Long accountId;
+
+    @Column(name="business_id",nullable = false)
+    private Long businessId;
 
 	public String getOrderId() {
 		return orderId;
@@ -109,11 +115,27 @@ public class AccountAdjustmentEntity extends AbstractEntity {
 		this.reflexId = reflexId;
 	}
 
-	public String getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
+
+    public Long getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(Long accountId) {
+        this.accountId = accountId;
+    }
+
+    public Long getBusinessId() {
+        return businessId;
+    }
+
+    public void setBusinessId(Long businessId) {
+        this.businessId = businessId;
+    }
 }

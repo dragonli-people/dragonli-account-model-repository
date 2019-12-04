@@ -43,6 +43,7 @@ public class FundFlowEvidenceTool {
         evidence.setBusinessId(businesId);
         evidence.setCurrency(asset.getCurrency());
         evidence.setFlowAmount(amount);
+        evidence.setCallBackHandled(false);
         evidence.setFlowStatus(EvidenceStatus.INIT);
         evidence.setOrderId(orderId+"@"+step);
         evidence.setStep(step);

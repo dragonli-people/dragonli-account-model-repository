@@ -35,6 +35,9 @@ public class FundFlowEvidenceEntity extends AbstractEntity {
 	
 	@Column(name="currency",nullable = false)
     private String currency;
+
+	@Column(name="call_back_handled",nullable = false)
+	private Boolean callBackHandled;
 	
 	@Column(name="flow_status",nullable = false)
 	@Enumerated(EnumType.STRING)
@@ -120,5 +123,13 @@ public class FundFlowEvidenceEntity extends AbstractEntity {
 
 	public void setUserId(Long userId) {
 		this.userId = userId;
+	}
+
+	public Boolean getCallBackHandled() {
+		return callBackHandled;
+	}
+
+	public void setCallBackHandled(Boolean callBackHandled) {
+		this.callBackHandled = callBackHandled;
 	}
 }
